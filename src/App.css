@@ -1,0 +1,12 @@
+.container_app{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 100%;
+  min-height: 60vh;
+  margin-bottom: 5rem;
+}
+
+.container_app h1{
+  color: antiquewhite;
+}

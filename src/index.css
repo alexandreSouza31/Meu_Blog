@@ -1,0 +1,63 @@
+:root {
+  --black: #1a1a1a;
+}
+
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #222;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+input {
+  border: none;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  padding: 0.4em 1em;
+
+  text-align: center;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 0.4em 1em;
+  margin: 1rem 0 0 .2rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--black);
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+button:hover {
+  color: #646cff;
+}
