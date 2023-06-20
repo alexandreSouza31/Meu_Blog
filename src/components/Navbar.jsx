@@ -4,16 +4,15 @@ import "./Navbar.css";
 const Navbar = () => {
     return (
         <nav>
-            <NavLink to="/">
-                {/* <p>Meu Blog</p> */}
-                <img src="/MeuBlog.png" alt="logo Meu Blog" />
+            <NavLink to="/" end className={({ isActive }) => (isActive ? ".active" : "")}>
+                <img src="/MeuBlog.png" alt="logo Meu Blog"  />
             </NavLink>
             <ul>
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/" end >Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about">Sobre</NavLink>
+                    <NavLink to="/about" >Sobre</NavLink>
                 </li>
             </ul>
         </nav>
