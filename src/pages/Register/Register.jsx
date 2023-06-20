@@ -75,3 +75,13 @@ const Register = () => {
 }
 
 export default Register;
+
+
+commit 0faa9035aa28697a41a6cb54654ad00613850ae8
+Author: alexandreSouza31 <alexandre31_m@hotmail.com>
+Date:   Fri Jun 23 00:18:32 2023 -0300
+
+    will post the error message
+
+     Date:      Fri Jun 22 20:18:32 2023 -0300
+            modified:   src/pages/Register/Register.jsx
