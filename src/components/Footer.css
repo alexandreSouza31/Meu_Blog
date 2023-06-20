@@ -1,19 +1,104 @@
+
+/*inicio*/
 footer{
-    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    text-align: center;
+    height: 300px;
+    padding: 1rem;
     background-color: black;
+    color: #c5c5c5;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+hr{
+    width: 100%;
+}
+
+.contact p,.contact a{
+    margin-bottom: .5rem;
 }
 
 .social_list{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
+   list-style: none;
+   display: flex;
+   justify-content: space-around;
 }
 
-.social_list svg{
+.social_list svg,.copy{
     font-size: 1.5rem;
+}
+
+/*fim*/
+
+.social_list svg,.copy{
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width:720px) {
+    footer{
+        height: 350px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    hr{
+    width: 0%;
+    height: 70%;
+}
+    
+    .social,.contact,.informations{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 33.34%;
+        text-align: center;
+    }
+    
+    .contact{
+        justify-content: space-around;
+    }
+    
+    .contact p,.contact a{
+        margin-bottom: .8rem;
+    }
+
+    .phones{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .informations{
+        justify-content: space-around;
+    }
+    
+    .social_list{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        height: 100%;
+        margin-top: 4rem;
+    }
+    
+    .social_list svg{
+        font-size: 1.5rem;
+    }
+    
+    .brand p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
