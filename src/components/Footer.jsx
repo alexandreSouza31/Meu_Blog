@@ -61,20 +61,22 @@ const Footer = () => {
 
                 <hr />
 
-                <section className="informations">
-                    <a href="/terms">termos de uso Meu Blog</a>
+                {/* <section className="informations">
 
+</section> */}
+                <section className="brand">
+                    <p>Nossos termos de uso</p>
+                    <a href="/terms">termos de uso Meu Blog</a>
+                    <p>
+                        <span>Meu Blog </span>
+                        |
+                        <span className="copy">&copy;</span>
+                        2023
+                    </p>
                 </section>
             </div>
 
-            <section className="brand">
-                <p>
-                    <span>Meu Blog </span>
-                    |
-                    <span className="copy">&copy;</span>
-                     2023
-                </p>
-            </section>
+
 
         </footer>
     )

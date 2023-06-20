@@ -55,7 +55,7 @@ hr{
 
     hr{
     width: 0%;
-    height: 70%;
+    height: 90%;
 }
     
     .social,.contact,.informations{
@@ -63,24 +63,25 @@ hr{
         flex-direction: column;
         align-items: center;
         width: 33.34%;
+        height: 100%;
         text-align: center;
     }
     
     .contact{
-        justify-content: space-around;
+        justify-content: space-between;
     }
     
     .contact p,.contact a{
-        margin-bottom: .8rem;
+        margin-bottom: 1rem;
     }
 
     .phones{
         display: flex;
         flex-direction: column;
     }
-    
-    .informations{
-        justify-content: space-around;
+
+    .informations,.social{
+        justify-content: space-between;
     }
     
     .social_list{
@@ -96,9 +97,21 @@ hr{
         font-size: 1.5rem;
     }
     
+    .brand{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
     .brand p{
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
+    .brand p, .brand a{
+        margin-bottom: 2rem;
+    }
+
 }
