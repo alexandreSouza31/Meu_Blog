@@ -10,22 +10,33 @@ const Footer = () => {
             <p>Nossas redes sociais</p>
             <ul className="social_list">
                 <li>
-                    <Link to="https://www.linkedin.com/in/alexandremariano31/">
+                    <Link
+                        to="https://www.linkedin.com/in/alexandremariano31/"
+                        target="_blank" //abrir em nova guia
+                        rel="noopener noreferrer" /*evitar possíveis ataques
+                        das páginas que eu fizer vínculo*/
+                    >
                         <FaLinkedinIn />
                     </Link>
                 </li>
                 <li>
-                    <Link to="mailto:alexandre31_m@hotmail.com">
-                        <SiGmail/>
+                    <Link
+                        to="mailto:alexandre31_m@hotmail.com"
+                        target="_blank" rel="noopener noreferrer">
+                        <SiGmail />
                     </Link>
                 </li>
                 <li>
-                    <Link to="https://github.com/alexandreSouza31">
+                    <Link
+                        to="https://github.com/alexandreSouza31"
+                        target="_blank" rel="noopener noreferrer">
                         <FaGithub />
                     </Link>
                 </li>
                 <li>
-                    <Link to="https://discord.com/channels/@me/831222330206322699">
+                    <Link
+                        to="https://discord.com/channels/@me/831222330206322699"
+                        target="_blank" rel="noopener noreferrer">
                         <FaDiscord />
                     </Link>
                 </li>
