@@ -17,11 +17,24 @@ nav ul{
     margin: 2rem;
 }
 
+ul li{
+    margin-left: .5rem;
+}
+
 .active{
     background-color: #535bf2;
     color: #ffffff98;
+    border-radius: 2px;
+    padding: 0 .1rem;
 }
 
 .active:hover{
     color: white;
+}
+
+
+@media screen and (min-width:720px) {
+    nav ul{
+        display: flex;
+    }
 }
