@@ -14,6 +14,7 @@ body{
   min-height: 100vh;
   margin: 0 auto;
   background-color: #222;
+  color: whitesmoke;
 }
 
 a {
@@ -31,6 +32,19 @@ h1 {
   line-height: 1.1;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+form input{
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
 input {
   border: none;
   border: 1px solid var(--black);
@@ -45,10 +59,10 @@ input:focus {
   outline: 0;
 }
 
-button {
+button,input[type=button],input[type=submit] {
   border-radius: 8px;
   border: none;
-  padding: 0.4em 1em;
+  padding: 0.8em 1em;
   margin: 1rem 0 0 .2rem;
   font-size: 1em;
   font-weight: 500;
@@ -58,6 +72,35 @@ button {
   color: whitesmoke;
 }
 
-button:hover {
+button:hover,
+input[type=button]:hover,
+input[type=submit]:hover {
   color: #646cff;
+  background-color: #111;
+}
+
+@media screen and (min-width:720px) {
+
+  form{
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+
+  form input{
+    width: 60%;
+  }
+}
+
+@media screen and (min-width:1300px) {
+
+  form{
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+
+  form input{
+    width: 50%;
+  }
 }
