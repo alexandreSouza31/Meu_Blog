@@ -61,12 +61,9 @@ const Footer = () => {
 
                 <hr />
 
-                {/* <section className="informations">
-
-</section> */}
                 <section className="brand">
                     <p>Nossos termos de uso</p>
-                    <a href="/terms">termos de uso Meu Blog</a>
+                    <Link to="/terms">termos de uso Meu Blog</Link>
                     <p>
                         <span>Meu Blog </span>
                         |
