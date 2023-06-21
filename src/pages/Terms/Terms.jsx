@@ -2,7 +2,7 @@ import "./Terms.css";
 
 const Terms = () => {
     return (
-        <div>
+        <div className="terms_container">
             <br />
             <h3>Lorem ipsum</h3>
             <br />
