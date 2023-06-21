@@ -70,6 +70,8 @@ button,input[type=button],input[type=submit] {
   background-color: var(--black);
   cursor: pointer;
   color: whitesmoke;
+  border: 1px solid whitesmoke;
+  transition: .4s;
 }
 
 button:hover,
@@ -77,6 +79,7 @@ input[type=button]:hover,
 input[type=submit]:hover {
   color: #646cff;
   background-color: #111;
+  border-color: #646cff;
 }
 
 @media screen and (min-width:720px) {
