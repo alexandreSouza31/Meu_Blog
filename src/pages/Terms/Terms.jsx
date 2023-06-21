@@ -1,3 +1,5 @@
+import "./Terms.css";
+
 const Terms = () => {
     return (
         <div>
