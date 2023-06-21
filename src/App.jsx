@@ -4,11 +4,11 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Terms from './pages/Terms/Terms';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import './App.css'
-import Terms from './pages/Terms/Terms';
 
 const App = () => {
   return (
