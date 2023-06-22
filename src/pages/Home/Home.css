@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: start;
     min-height: 60vh;
+    width: 100%;
 }
 
 h1:nth-child(2) {
