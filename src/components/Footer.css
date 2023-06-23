@@ -14,13 +14,14 @@ footer{
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     height: 100%;
 }
 
 hr{
     width: 100%;
+    background-color: rgb(0, 0, 0);
+    opacity: .2;
 }
 
 .contact p,.contact a{
@@ -49,8 +50,8 @@ hr{
     }
 
     .container{
-        display: flex;
         flex-direction: row;
+        width: 100%;
     }
 
     hr{
@@ -58,7 +59,7 @@ hr{
     height: 90%;
 }
     
-    .social,.contact,.informations{
+    .social,.contact,.brand{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -80,7 +81,7 @@ hr{
         flex-direction: column;
     }
 
-    .informations,.social{
+    .brand,.social{
         justify-content: space-between;
     }
     
