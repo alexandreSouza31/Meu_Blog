@@ -32,6 +32,7 @@ const Register = () => {
             <h1>Cadastre-se agora mesmo!</h1>
             
             <form onSubmit={handleSubmit}>
+            {error && <p className="error">{error}</p>}
                     <input
                         type="text"
                         name="name"
