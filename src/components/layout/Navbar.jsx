@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <nav>
             <NavLink to="/" end className={({ isActive }) => (isActive ? ".active" : "")}>
-                <img src="/MeuBlog.png" alt="logo Meu Blog"  />
+                <img src="/MeuBlog.png" alt="logo Meu Blog" />
             </NavLink>
             <ul>
                 <li>

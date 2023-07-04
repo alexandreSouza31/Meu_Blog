@@ -24,50 +24,50 @@ const Register = () => {
         if (password !== confirmPassword) {
             setError("As senhas precisam ser iguais!");
             return;
-        }console.log(user)
+        } console.log(user)
     }
 
     return (
         <div className="register_container">
             <h1>Cadastre-se agora mesmo!</h1>
-            
+
             <form onSubmit={handleSubmit}>
-            {error && <p className="error">{error}</p>}
-                    <input
-                        type="text"
-                        name="name"
-                        required
+                {error && <p className="error">{error}</p>}
+                <input
+                    type="text"
+                    name="name"
+                    required
                     placeholder="Digite seu nome."
                     value={name}
-                    onChange={(e)=>setName(e.target.value)}
-                    />
-                
-                    <input
-                        type="email"
-                        name="email"
-                        required
+                    onChange={(e) => setName(e.target.value)}
+                />
+
+                <input
+                    type="email"
+                    name="email"
+                    required
                     placeholder="Digite seu email."
                     value={email}
-                    onChange={(e)=>setEmail(e.target.value)}
-                    />
-                
-                    <input
-                        type="password"
-                        name="password"
-                        required
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <input
+                    type="password"
+                    name="password"
+                    required
                     placeholder="Digite sua senha."
                     value={password}
-                    onChange={(e)=>setPassword(e.target.value)}
-                    />
-                
-                    <input
-                        type="password"
-                        name="confirmPassword"
-                        required
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+
+                <input
+                    type="password"
+                    name="confirmPassword"
+                    required
                     placeholder="Confirme sua senha."
                     value={confirmPassword}
-                    onChange={(e)=>setConfirmPassword(e.target.value)}
-                    />
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                />
                 <input type="submit" value="Cadastrar" />
             </form>
         </div>
@@ -75,4 +75,3 @@ const Register = () => {
 }
 
 export default Register;
- 

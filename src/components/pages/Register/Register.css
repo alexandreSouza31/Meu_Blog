@@ -1,0 +1,36 @@
+.register_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    min-height: 60vh;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.error{
+    color: #721c24;
+    background-color:#f8d7da;
+    border: 1px solid #f5c6cb;
+    width: 80%;
+}
+
+button{
+    width: 80%;
+}
+
+@media screen and (min-width:720px) {
+    .error{
+        width: 60%;
+    }
+}
+@media screen and (min-width:1300px) {
+    .error{
+        width: 50%;
+    }
+}

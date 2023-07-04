@@ -1,6 +1,5 @@
-
 /*inicio*/
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,55 +10,60 @@ footer{
     color: #c5c5c5;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
 }
 
-hr{
+hr {
     width: 100%;
     background-color: rgb(0, 0, 0);
     opacity: .2;
 }
 
-.contact p,.contact a{
+.contact p,
+.contact a {
     margin-bottom: .5rem;
 }
 
-.social_list{
-   list-style: none;
-   display: flex;
-   justify-content: space-around;
+.social_list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
 }
 
-.social_list svg,.copy{
+.social_list svg,
+.copy {
     font-size: 1.5rem;
 }
 
 /*fim*/
 
-.social_list svg,.copy{
+.social_list svg,
+.copy {
     font-size: 1.5rem;
 }
 
 @media screen and (min-width:720px) {
-    footer{
+    footer {
         height: 350px;
     }
 
-    .container{
+    .container {
         flex-direction: row;
         width: 100%;
     }
 
-    hr{
-    width: 0%;
-    height: 90%;
-}
-    
-    .social,.contact,.brand{
+    hr {
+        width: 0%;
+        height: 90%;
+    }
+
+    .social,
+    .contact,
+    .brand {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -67,25 +71,27 @@ hr{
         height: 100%;
         text-align: center;
     }
-    
-    .contact{
+
+    .contact {
         justify-content: space-between;
     }
-    
-    .contact p,.contact a{
+
+    .contact p,
+    .contact a {
         margin-bottom: 1rem;
     }
 
-    .phones{
+    .phones {
         display: flex;
         flex-direction: column;
     }
 
-    .brand,.social{
+    .brand,
+    .social {
         justify-content: space-between;
     }
-    
-    .social_list{
+
+    .social_list {
         list-style: none;
         display: flex;
         justify-content: space-around;
@@ -93,25 +99,26 @@ hr{
         height: 100%;
         margin-top: 4rem;
     }
-    
-    .social_list svg{
+
+    .social_list svg {
         font-size: 1.5rem;
     }
-    
-    .brand{
+
+    .brand {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
     }
 
-    .brand p{
+    .brand p {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .brand p, .brand a{
+    .brand p,
+    .brand a {
         margin-bottom: 2rem;
     }
 

@@ -1,13 +1,14 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
-import Terms from './pages/Terms/Terms';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import Home from './components/pages/Home/Home'
+import About from './components/pages/About/About'
+import Login from './components/pages/Login/Login'
+import Register from './components/pages/Register/Register'
+import Terms from './components/pages/Terms/Terms'
 
+//styles
 import './App.css'
 
 const App = () => {
