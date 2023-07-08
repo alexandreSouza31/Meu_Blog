@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import "./Register.css";
+import { useAuthentication } from "../../../hooks/useAuthentication";
+
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -9,7 +11,8 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const { createUser, error: authError, loading } = useAuthentication();
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         setError("");//começa vazio
@@ -25,6 +28,9 @@ const Register = () => {
             setError("As senhas precisam ser iguais!");
             return;
         } console.log(user)
+        
+        const res = await createUser(user);
+        console.log(res);
     }
 
     return (
