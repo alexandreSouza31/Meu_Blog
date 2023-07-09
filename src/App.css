@@ -1,8 +1,7 @@
 .container_app{
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
+  align-items: center;
   width: 100%;
-  min-height: 70vh;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }

@@ -84,26 +84,14 @@ input[type=submit]:hover {
 
 @media screen and (min-width:720px) {
 
-  form{
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-  }
-
   form input{
-    width: 60%;
+    width: 400px;
   }
 }
 
 @media screen and (min-width:1300px) {
 
-  form{
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-  }
-
   form input{
-    width: 50%;
+    width: 600px;
   }
 }
