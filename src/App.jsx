@@ -1,3 +1,5 @@
+//context
+import { AuthProvider } from './components/context/AuthContext'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
@@ -14,19 +16,21 @@ import './App.css'
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Navbar/>
-        <div className='container_app'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/terms' element={<Terms/>} />
-          </Routes>
-        </div>
-        <Footer/>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <div className='container_app'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/terms' element={<Terms />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
