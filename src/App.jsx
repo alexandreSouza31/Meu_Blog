@@ -1,7 +1,12 @@
 //context
 import { AuthProvider } from './components/context/AuthContext'
+import { useAuthentication } from './hooks/useAuthentication'
 
+//react
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+//pages and layout
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Home from './components/pages/Home/Home'
@@ -12,11 +17,28 @@ import Terms from './components/pages/Terms/Terms'
 
 //styles
 import './App.css'
+import { onAuthStateChanged } from 'firebase/auth'
 
 const App = () => {
+
+  const [user, setUser] = useState(undefined);
+  const { auth } = useAuthentication();
+
+  const loadingUser = user === undefined;
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {//verifica se o usuário está logado quando é realizado cadastro, login, etc.
+      setUser(user)
+    })
+  },[auth])
+
+  if (loadingUser) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <>
-      <AuthProvider>
+      <AuthProvider value={user}>{/*consigo acessar o usuário em tds os locais */}
         <BrowserRouter>
           <Navbar />
           <div className='container_app'>
