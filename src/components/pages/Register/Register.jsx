@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./Register.css";
 import { useAuthentication } from "../../../hooks/useAuthentication";
@@ -32,6 +32,12 @@ const Register = () => {
         const res = await createUser(user);
         console.log(res);
     }
+
+    useEffect(() => {//verificará se o erro é o do authError
+        if (authError) {
+            setError(authError);
+        }
+    },[authError])
 
     return (
         <div className="register_container">
@@ -74,7 +80,10 @@ const Register = () => {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <input type="submit" value="Cadastrar" />
+                {!loading && <input type="submit" value="Cadastrar" />}
+                {loading && (
+                    <input type="submit" value="Aguarde..." />
+                )}
             </form>
         </div>
     )
