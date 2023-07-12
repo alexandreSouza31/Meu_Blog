@@ -18,6 +18,8 @@ import Terms from './components/pages/Terms/Terms'
 //styles
 import './App.css'
 import { onAuthStateChanged } from 'firebase/auth'
+import { CreatePost } from './components/pages/CreatePost/CreatePost'
+import { Dashboard } from './components/pages/Dashboard/Dashboard'
 
 const App = () => {
 
@@ -48,6 +50,8 @@ const App = () => {
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
               <Route path='/terms' element={<Terms />} />
+              <Route path='/posts/create' element={<CreatePost />} />
+              <Route path='/dashboard' element={<Dashboard />} />
             </Routes>
           </div>
           <Footer />
