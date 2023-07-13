@@ -5,23 +5,25 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const { user } = useAuthValue();//chamo o contexto
-    
+    const  user  = useAuthValue();//chamo o contexto
+    const { logout } = useAuthentication();//função logout está no hook useauthentication. Só importo aqui.
 
+    //const isLogged=user.email
+    console.log(user)
     return (
         <nav>
             <NavLink to="/" end
                 className={({ isActive }) => (isActive ? ".active" : "")}
->
+            >
                 <img src="/MeuBlog.png" alt="logo Meu Blog" />
             </NavLink>
             <ul>
+                {user === null && (
+                    <>
                 <li>
                     <NavLink to="/" end
-                         >Home</NavLink>
+                    >Home</NavLink>
                 </li>
-                {user !==undefined && (
-                    <>
                         <li>
                             <NavLink to="/login" end
                             >Entrar</NavLink>
@@ -32,17 +34,18 @@ const Navbar = () => {
                         </li>
                     </>
                 )}
-                {user === undefined && (
-                     <>
-                     <li>
-                         <NavLink to="/dashboard" end
-                         >Dashboard</NavLink>
-                     </li>
-                     <li>
-                         <NavLink to="/posts/create" end
-                         >Post</NavLink>
-                     </li>
-                 </>
+                {user !== null && (
+                    <>
+                        <li>
+                            <NavLink to="/dashboard" end
+                            >Dashboard</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/posts/create" end
+                            >Post</NavLink>
+                        </li>
+
+                    </>
                 )}
                 <li>
                     <NavLink to="/about" >Sobre</NavLink>

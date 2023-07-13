@@ -4,7 +4,7 @@ import { useAuthentication } from './hooks/useAuthentication'
 
 //react
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 //pages and layout
 import Navbar from './components/layout/Navbar'
@@ -38,6 +38,10 @@ const App = () => {
     return <p>Carregando...</p>
   }
 
+  //const isLogged = user.email
+      console.log(user)
+
+
   return (
     <>
       <AuthProvider value={user}>{/*consigo acessar o usuário em tds os locais */}
@@ -45,13 +49,23 @@ const App = () => {
           <Navbar />
           <div className='container_app'>
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route path='/' element={user === null? <Home />: <Navigate to="/dashboard" />} />
               <Route path='/about' element={<About />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
+
+              <Route path='/login'
+                element={user === null ? <Login /> : <Navigate to="/dashboard" />} />
+              
+              <Route path='/register'
+                element={user === null ? <Register /> : <Navigate to="/dashboard" />} />
+              
               <Route path='/terms' element={<Terms />} />
-              <Route path='/posts/create' element={<CreatePost />} />
-              <Route path='/dashboard' element={<Dashboard />} />
+
+              <Route path='/posts/create'
+                element={user !== null ? <CreatePost /> : <Navigate to="/login" />} />
+              
+              <Route path='/dashboard'
+                element={user !== null ? <Dashboard /> : <Navigate to="/login" />} />
+              
             </Routes>
           </div>
           <Footer />
