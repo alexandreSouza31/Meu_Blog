@@ -50,6 +50,14 @@ const Navbar = () => {
                 <li>
                     <NavLink to="/about" >Sobre</NavLink>
                 </li>
+                {user !== null && (
+                    <li>
+                        <button
+                            className="logout_btn"
+                            onClick={logout}
+                        >Sair</button>
+                    </li>
+                )}
             </ul>
         </nav>
     )

@@ -64,12 +64,19 @@ export const useAuthentication = () => {
 
     }
 
+    //logout
+
+    const logout = () => {
+        checkIfIsCancelled();
+        signOut(auth);
+    }
+
     useEffect(() => {
         return () => setCancelled(true);
     }, []);
 
     return {
-        auth,createUser,error,loading
+        auth,createUser,error,loading,logout
     }
 
 }
