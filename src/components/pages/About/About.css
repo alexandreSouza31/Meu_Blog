@@ -1,3 +1,35 @@
-.container_about{
+.container_about {
     min-height: 60vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container_about a {
+
+    margin: 4rem auto 0 auto;
+    max-width: 400px;
+    border-radius: 8px;
+    border: none;
+    padding: 0.8em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    transition: .4s;
+
+
+}
+
+.container_about a:hover,
+input[type=button]:hover,
+input[type=submit]:hover {
+    color: #646cff;
+    background-color: #111;
+    border-color: #646cff;
 }
