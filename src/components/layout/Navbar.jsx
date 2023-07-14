@@ -8,8 +8,6 @@ const Navbar = () => {
     const  user  = useAuthValue();//chamo o contexto
     const { logout } = useAuthentication();//função logout está no hook useauthentication. Só importo aqui.
 
-    //const isLogged=user.email
-    console.log(user)
     return (
         <nav>
             <NavLink to="/" end

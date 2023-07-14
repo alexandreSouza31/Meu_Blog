@@ -15,10 +15,18 @@ nav img {
 nav ul {
     list-style: none;
     margin: 2rem;
+    text-align: start;
 }
 
 ul li {
     margin-left: .5rem;
+}
+
+.logout_btn{
+    padding: 0;
+    border: none;
+    margin: 0;
+    width: 0%;
 }
 
 .active {
