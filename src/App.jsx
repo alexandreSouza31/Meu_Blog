@@ -38,10 +38,6 @@ const App = () => {
     return <p>Carregando...</p>
   }
 
-  //const isLogged = user.email
-      console.log(user)
-
-
   return (
     <>
       <AuthProvider value={user}>{/*consigo acessar o usuário em tds os locais */}
@@ -57,6 +53,7 @@ const App = () => {
               
               <Route path='/register'
                 element={user === null ? <Register /> : <Navigate to="/dashboard" />} />
+                {/* element={<Register />} /> */}
               
               <Route path='/terms' element={<Terms />} />
 

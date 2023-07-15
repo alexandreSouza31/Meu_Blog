@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import "./Register.css";
 import { useAuthentication } from "../../../hooks/useAuthentication";
 
-
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -21,13 +20,13 @@ const Register = () => {
             name,
             email,
             password,
-            confirmPassword
+            confirmPassword,
         }
 
         if (password !== confirmPassword) {
             setError("As senhas precisam ser iguais!");
             return;
-        } console.log(user)
+        }
         
         const res = await createUser(user);
         console.log(res);
@@ -82,7 +81,7 @@ const Register = () => {
                 />
                 {!loading && <input type="submit" value="Cadastrar" />}
                 {loading && (
-                    <input type="submit" value="Aguarde..." />
+                        <input type="submit" value="Aguarde..." />
                 )}
             </form>
         </div>
