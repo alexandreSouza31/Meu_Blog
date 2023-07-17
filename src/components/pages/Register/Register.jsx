@@ -10,6 +10,9 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
 
+    const { logout } = useAuthentication();//função logout está no hook useauthentication. Só importo aqui.
+
+
     const { createUser, error: authError, loading } = useAuthentication();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,6 +32,8 @@ const Register = () => {
         }
         
         const res = await createUser(user);
+        logout();/*como ele autentica assim que cadastro e vai direto pra dashboard, faço o 
+        logout logo após cadastrar, e com isso não loga no sistema.*/
         console.log(res);
     }
 
