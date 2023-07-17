@@ -1,0 +1,12 @@
+.container_post {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.container_post form {
+    width: 90vw;
+}
+
+.container_post textarea {
+    margin-bottom: 1rem;
+}
