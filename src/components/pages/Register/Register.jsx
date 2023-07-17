@@ -4,7 +4,7 @@ import "./Register.css";
 import { useAuthentication } from "../../../hooks/useAuthentication";
 
 const Register = () => {
-    const [name, setName] = useState("");
+    const [displayName, setDisplayName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -20,7 +20,7 @@ const Register = () => {
         setError("");//começa vazio
         //agr vou formar os usuários baseado nos inputs:
         const user = {
-            name,
+            displayName,
             email,
             password,
             confirmPassword,
@@ -51,11 +51,11 @@ const Register = () => {
                 {error && <p className="error">{error}</p>}
                 <input
                     type="text"
-                    name="name"
+                    name="displayName"
                     required
                     placeholder="Digite seu nome."
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
                 />
 
                 <input
