@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useInsertDocument } from "../../../hooks/useInsertDocument";
+import { useAuthValue } from "../../context/AuthContext";
 
 import "./CreatePost.css"
 
@@ -9,17 +11,32 @@ export const CreatePost = () => {
     const [body, setBody] = useState("");
     const [tags, setTags] = useState([]);
     const [formError, setFormError] = useState("");
-    const [loading, setLoading] = useState("");
 
+    const  user  = useAuthValue();//chamo o contexto
+
+    const {insertDocument,response}=useInsertDocument("posts")//posts é a coleção que quero criar no banco
+
+    /*caso dê o erro "Missing or insufficient permissions", vou no firestore database, no site do firebase, vou em regras, e altero o false para true. */
     const handleSubmit = (e) => {
         e.preventDefault();
+        setFormError("");
+
+        insertDocument({
+            title,
+            image,
+            body,
+            tags,
+            uid: user.uid,
+            createdBy:user.displayName
+        })
+
     }
 
     return (
         <div className="container_post">
             <h2>Crie seu post!</h2>
             <form onSubmit={handleSubmit}>
-                {formError && <p className="error">{formError}</p>}
+                {response.error && <p className="error">{response.error}</p>}
 
                 <input
                     type="text"
@@ -53,8 +70,8 @@ export const CreatePost = () => {
                     onChange={(e) => setTags(e.target.value)}
                 />
 
-                {!loading && <input type="submit" value="Postar" />}
-                {loading && (
+                {!response.loading && <input type="submit" value="Postar" />}
+                {response.loading && (
                     <input type="submit" value="Aguarde..." />
                 )}
                 
