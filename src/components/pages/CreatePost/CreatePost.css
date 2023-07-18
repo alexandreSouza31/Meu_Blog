@@ -1,6 +1,7 @@
 .container_post {
     margin: 2rem auto;
     text-align: center;
+    min-height: 50vh;
 }
 
 .container_post form {
