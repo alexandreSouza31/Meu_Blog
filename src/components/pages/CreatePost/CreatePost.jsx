@@ -3,6 +3,7 @@ import { useInsertDocument } from "../../../hooks/useInsertDocument";
 import { useAuthValue } from "../../context/AuthContext";
 
 import "./CreatePost.css"
+import { useNavigate } from "react-router-dom";
 
 export const CreatePost = () => {
 
@@ -12,23 +13,57 @@ export const CreatePost = () => {
     const [tags, setTags] = useState([]);
     const [formError, setFormError] = useState("");
 
-    const  user  = useAuthValue();//chamo o contexto
+    const user = useAuthValue();//chamo o contexto
 
-    const {insertDocument,response}=useInsertDocument("posts")//posts é a coleção que quero criar no banco
+    const navigate = useNavigate();
+
+    const { insertDocument, response } = useInsertDocument("posts")//posts é a coleção que quero criar no banco
 
     /*caso dê o erro "Missing or insufficient permissions", vou no firestore database, no site do firebase, vou em regras, e altero o false para true. */
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormError("");
 
-        insertDocument({
-            title,
-            image,
-            body,
-            tags,
-            uid: user.uid,
-            createdBy:user.displayName
-        })
+        // try {
+        //     new URL(image)
+        // } catch (error) {
+        //     return setFormError("A imagem precisa ser uma URL!")  
+        // }
+
+        //cria o array de tags
+        //const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+        //valida campos
+        //const url_expression = "/^https?:\/\//";
+
+        if (!title && !body && !image) {
+            setFormError("Esses campos precisam ser preenchidos!");
+            return;
+        } else if (!title) {
+            setFormError("O título precisa ser preenchido!");
+            return;
+            } else if (!image) {
+                return setFormError("Digite a URL da imagem!")
+        } else if (!body) {
+            setFormError("A descrição precisa ser preenchida!");
+            return;
+
+        } else {
+
+            //if (formError) return;
+            const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+            insertDocument({
+                title,
+                image,
+                body,
+                tagsArray,
+                uid: user.uid,
+                createdBy: user.displayName
+            })
+            // redirect to home page
+    navigate("/");
+        }
 
     }
 
@@ -37,11 +72,11 @@ export const CreatePost = () => {
             <h2>Crie seu post!</h2>
             <form onSubmit={handleSubmit}>
                 {response.error && <p className="error">{response.error}</p>}
+                {formError && <p className="error">{formError}</p>}
 
                 <input
                     type="text"
                     name="title"
-                    required
                     placeholder="Escreva o título do post."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -57,7 +92,7 @@ export const CreatePost = () => {
 
                 <textarea
                     name="body"
-                    required
+
                     placeholder="Escreva seu post."
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
@@ -65,7 +100,7 @@ export const CreatePost = () => {
                 <input
                     type="text"
                     name="tags"
-                    placeholder="Adicione tags pro post separando por vírgula."
+                    placeholder="Adicione tags separando por vírgula. Ex: JS, React.js,..."
                     value={tags}
                     onChange={(e) => setTags(e.target.value)}
                 />
@@ -74,7 +109,7 @@ export const CreatePost = () => {
                 {response.loading && (
                     <input type="submit" value="Aguarde..." />
                 )}
-                
+
             </form>
         </div>
     )
