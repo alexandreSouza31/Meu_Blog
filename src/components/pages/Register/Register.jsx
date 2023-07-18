@@ -34,7 +34,6 @@ const Register = () => {
         const res = await createUser(user);
         logout();/*como ele autentica assim que cadastro e vai direto pra dashboard, faço o 
         logout logo após cadastrar, e com isso não loga no sistema.*/
-        console.log(res);
     }
 
     useEffect(() => {//verificará se o erro é o do authError

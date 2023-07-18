@@ -52,7 +52,7 @@ const App = () => {
                 element={user === null ? <Login /> : <Navigate to="/dashboard" />} />
               
               <Route path='/register'
-                element={user === null ? <Register /> : <Navigate to="/dashboard" />} />
+                element={user === null ? <Register /> : <Navigate to="/login" />} />
                 {/* element={<Register />} /> */}
               
               <Route path='/terms' element={<Terms />} />
