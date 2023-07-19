@@ -17,10 +17,17 @@
     margin: 2rem auto;
 }
 
-form input[type=text],form input[type=button]{
+.container_home form input[type=text],.container_home form input[type=button]{
     width: 80%;
     margin: 0;
     margin-bottom: 1rem;
+}
+
+.container_home hr{
+    opacity: .1;
+    color: white;
+    width: 90vw;
+    margin: 0 auto;
 }
 
 .posts_container{
@@ -28,22 +35,30 @@ form input[type=text],form input[type=button]{
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
+.no_posts{
+    text-align: center;
+}
 
 @media screen and ( min-width:720px ) {
+    /* .container_home{
+        justify-content: space-between;
+    } */
     .container_home form{
-        width: 60vw;
+        width: 90vw;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        margin: 2rem auto;
+        margin: 1rem auto 0rem auto;
     }
-    form input[type=text]{
-        width: 50%;
+    .container_home form input[type=text]{
+        width: 25%;
     }
-    form input[type=button]{
-        width: 20%;
+    .container_home form input[type=button]{
+        width: 11%;
         margin-left: 1rem;
+        padding: .3rem;
     }
 }
