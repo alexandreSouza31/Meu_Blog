@@ -20,7 +20,7 @@ const Navbar = () => {
                     <>
                 <li>
                     <NavLink to="/" end
-                    >Home</NavLink>
+                    >Index</NavLink>
                 </li>
                         <li>
                             <NavLink to="/login" end
@@ -34,6 +34,10 @@ const Navbar = () => {
                 )}
                 {user !== null && (
                     <>
+                        <li>
+                            <NavLink to="/home" end
+                            >Home</NavLink>
+                        </li>
                         <li>
                             <NavLink to="/dashboard" end
                             >Dashboard</NavLink>

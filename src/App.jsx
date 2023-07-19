@@ -9,17 +9,18 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 //pages and layout
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import Home from './components/pages/Home/Home'
+import Index from './components/pages/Index/Index'
 import About from './components/pages/About/About'
 import Login from './components/pages/Login/Login'
 import Register from './components/pages/Register/Register'
 import Terms from './components/pages/Terms/Terms'
+import Home from './components/pages/Home/Home'
+import { Dashboard } from './components/pages/Dashboard/Dashboard'
+import { CreatePost } from './components/pages/CreatePost/CreatePost'
 
 //styles
 import './App.css'
 import { onAuthStateChanged } from 'firebase/auth'
-import { CreatePost } from './components/pages/CreatePost/CreatePost'
-import { Dashboard } from './components/pages/Dashboard/Dashboard'
 
 const App = () => {
 
@@ -45,15 +46,14 @@ const App = () => {
           <Navbar />
           <div className='container_app'>
             <Routes>
-              <Route path='/' element={user === null? <Home />: <Navigate to="/dashboard" />} />
-              <Route path='/about' element={<About />} />
+              <Route path='/' element={user === null? <Index />: <Navigate to="/home" />} />
 
               <Route path='/login'
-                element={user === null ? <Login /> : <Navigate to="/dashboard" />} />
+                element={user === null ? <Login /> : <Navigate to="/home" />} />
               
               <Route path='/register'
                 element={user === null ? <Register /> : <Navigate to="/login" />} />
-                {/* element={<Register />} /> */}
+              <Route path='/about' element={<About />} />
               
               <Route path='/terms' element={<Terms />} />
 
@@ -63,6 +63,8 @@ const App = () => {
               <Route path='/dashboard'
                 element={user !== null ? <Dashboard /> : <Navigate to="/login" />} />
               
+              <Route path='/home'
+                element={user !== null ? <Home /> : <Navigate to="/" />} />
             </Routes>
           </div>
           <Footer />
