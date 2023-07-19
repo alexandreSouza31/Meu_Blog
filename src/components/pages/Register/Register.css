@@ -26,11 +26,9 @@ button{
 
 @media screen and (min-width:720px) {
     .error{
-        width: 400px;
-    }
-}
-@media screen and (min-width:1300px) {
-    .error{
         width: 600px;
     }
 }
+/* @media screen and (min-width:1300px) {
+    
+} */

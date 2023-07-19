@@ -6,8 +6,9 @@
 
 .container_post form {
     width: 90vw;
+    gap: 1rem;
 }
 
 .container_post textarea {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
 }
