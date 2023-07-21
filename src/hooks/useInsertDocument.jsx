@@ -5,7 +5,7 @@ import {
     collection,//é como se fosse a tabela do bd não-relacional;
     addDoc,//inserir o documento
     Timestamp,//marcar o horário de criação
-} from "firebase/firestore/lite";
+} from "firebase/firestore";
 
 const initialState = {
     loading: null,
@@ -65,9 +65,9 @@ export const useInsertDocument = (docCollection) => {//qual é a coleção
         }
     }
 
-    // useEffect(() => {
-    //     return () => setCancelled(true);
-    // },[])
+    useEffect(() => {
+        return () => setCancelled(true);
+    },[])
 
     return {insertDocument,response}
 

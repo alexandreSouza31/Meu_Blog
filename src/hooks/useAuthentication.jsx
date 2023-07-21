@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
 
-import  { db } from "../firebase/config.js" ;
-
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -48,7 +46,6 @@ export const useAuthentication = () => {
             
         } catch (error) {
             console.log(error.message)
-            console.log(typeof error.message)
 
             let systemErrorMessage;
 
