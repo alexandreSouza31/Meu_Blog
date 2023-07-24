@@ -51,15 +51,14 @@ export const CreatePost = () => {
         } else {
 
             //if (formError) return;
-            const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
-
+            let tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
             insertDocument({
                 title,
                 image,
                 body,
                 tagsArray,
                 uid: user.uid,
-                createdBy: user.displayName
+                createdBy: user.displayName,
             })
             // redirect to home page
     navigate("/");
