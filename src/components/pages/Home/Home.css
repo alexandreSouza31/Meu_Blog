@@ -1,8 +1,6 @@
 .container_home {
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
     min-height: 60vh;
     width: 100%;
 }
@@ -10,17 +8,35 @@
 .container_home form{
     width: 90vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin: 2rem auto;
 }
 
+.container_home form h2{
+    color: #c5c5c5;
+    text-align: center;
+}
+
+.container_search{
+    display: flex;
+    align-items: center;
+}
+
+.container_search button{
+    margin-top: .5rem;
+    padding: 0;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+}
+
 .container_home form input[type=text],.container_home form input[type=button]{
-    width: 80%;
-    margin: 0;
-    margin-bottom: 1rem;
+    width: 200px;
+    margin: 0 0 0 1rem;
+    margin-bottom: 0rem;
 }
 
 .container_home hr{
@@ -38,27 +54,50 @@
     margin-top: 2rem;
 }
 
+.posts_container h3{
+    color: white;
+}
+
+.posts_container p{
+    color: #c5c5c5;
+}
+
 .no_posts{
     text-align: center;
 }
 
+@media screen and (max-width:280px) {
+    .container_home,.container_home form{
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .container_home h2{
+        word-break: break-all;
+    }
+
+    .container_search button{
+        margin: 0;
+    }
+}
+
 @media screen and ( min-width:720px ) {
-    /* .container_home{
-        justify-content: space-between;
-    } */
+    
     .container_home form{
         width: 90vw;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
-        margin: 1rem auto 0rem auto;
+        margin: 1rem auto;
     }
     .container_home form input[type=text]{
-        width: 25%;
+        width: 200px;
+        margin: 0;
+        margin-right: .5rem;
     }
     .container_home form input[type=button]{
-        width: 11%;
+        width: 100px;
         margin-left: 1rem;
         padding: .3rem;
+        margin: 0;
     }
 }
