@@ -21,10 +21,8 @@ const Login = () => {
             email,
             password,
         }
-        //console.log(user)
 
         const res = await signInUser(user);
-        console.log(res);
     }
 
     useEffect(() => {//verificará se o erro é o do authError
