@@ -5,7 +5,7 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const  user  = useAuthValue();//chamo o contexto
+    const user = useAuthValue();//chamo o contexto
     const { logout } = useAuthentication();//função logout está no hook useauthentication. Só importo aqui.
 
     return (
@@ -14,14 +14,24 @@ const Navbar = () => {
                 className={({ isActive }) => (isActive ? ".active" : "")}
             >
                 <img src="/MeuBlog.png" alt="logo Meu Blog" />
+                {user &&
+                <p className="nav_user_small">Olá,
+                    {user.displayName}!
+                </p>}
+            
             </NavLink>
+                {user &&
+                <p className="nav_user">Olá,
+                    {user.displayName}!
+                </p>}
+            
             <ul>
                 {user === null && (
                     <>
-                <li>
-                    <NavLink to="/" end
-                    >Index</NavLink>
-                </li>
+                        <li>
+                            <NavLink to="/" end
+                            >Index</NavLink>
+                        </li>
                         <li>
                             <NavLink to="/login" end
                             >Entrar</NavLink>
