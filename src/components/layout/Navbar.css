@@ -6,6 +6,34 @@ nav {
     height: 120px;
 }
 
+.nav_user {
+    margin-left: .5rem;
+    overflow: auto;
+    /* text-overflow: ellipsis; */
+    white-space: nowrap;
+    color: #646CFF;
+    font-size: 1.2rem;
+}
+
+.nav_user::-webkit-scrollbar,span::-webkit-scrollbar {
+    width: 12px;              /* width of the entire scrollbar */
+  }
+  
+  .nav_user::-webkit-scrollbar-track,span::-webkit-scrollbar-track {
+    background: #333;        /* color of the tracking area */
+    border-radius: 5px;
+  }
+  
+  .nav_user::-webkit-scrollbar-thumb,span::-webkit-scrollbar-thumb {
+    background-color:#222;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid #333;  /* creates padding around scroll thumb */
+  }
+
+.nav_user_small {
+    display: none;
+    margin-left: 6rem;
+}
 
 nav img {
     width: 80px;
@@ -22,7 +50,7 @@ ul li {
     margin-left: .5rem;
 }
 
-.logout_btn{
+.logout_btn {
     padding: 0;
     border: none;
     margin: 0;
@@ -40,9 +68,93 @@ ul li {
     color: white;
 }
 
+@media screen and (max-width:280px) {
+    * {
+        text-align: center;
+        margin: 0;
+    }
+
+    nav,
+    .nav_user {
+        max-width: 280px;
+    }
+
+    nav {
+        min-height: 260px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav img,
+    .nav_user,
+    ul li,
+    .logout_btn {
+        margin: 0rem;
+    }
+
+    nav img {
+        width: 50px;
+        margin-top: .5rem;
+    }
+
+    .nav_user_small{
+        margin-right: 2rem;
+        word-break: break-all;
+    }
+
+    .logout_btn {
+        margin-right: 2.5rem;
+    }
+}
+
+@media screen and (max-width:374px) {
+
+    .nav_user {
+        display: flex;
+        margin: 0;
+        margin-left: 0;
+        text-align: center;
+        overflow: auto;
+        text-overflow: initial;
+        white-space: normal;
+    }
+
+    .nav_user_small{
+        margin-left: 2rem;
+    }
+
+}
+
+@media screen and (max-width:520px) {
+    nav{
+        height: 200px;
+    }
+    .nav_user {
+        display: none;
+    }
+    
+    .nav_user_small {
+        display: block;
+        /* margin: 0; */
+    }
+    
+}
 
 @media screen and (min-width:720px) {
     nav ul {
         display: flex;
+    }
+    .nav_user{
+        
+    }
+    
+}
+@media screen and (min-width:1080px) {
+    nav ul {
+        display: flex;
+    }
+    .nav_user{
+        margin-left: 10rem;
+        font-size: 1.5rem;
     }
 }
