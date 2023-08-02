@@ -35,10 +35,10 @@ const Home = () => {
             <div className="posts_container">
                 {loading && <p>Carregando</p>}
                 {posts && posts.map((post) => (
-                    <div key={query} className="card_post">
+                    <div key={post.id} className="card_post">
                         <p className="container_user">
                             <span >< FaUser /></span>
-                            <p className="user">{post.createdBy}</p>
+                            <span className="user">{post.createdBy}</span>
                         </p>
                         <div className="post_details">
                             <h3>{post.title}</h3>
