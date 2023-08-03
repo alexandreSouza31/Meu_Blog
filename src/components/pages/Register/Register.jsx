@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import "./Register.css";
 import CustomInput from "../../elements/CustomInput";
 import { useAuthentication } from "../../../hooks/useAuthentication";
+
+import "./Register.css";
 
 const Register = () => {
     const [displayName, setDisplayName] = useState("");
@@ -91,6 +93,8 @@ const Register = () => {
                         <input type="submit" value="Aguarde..." />
                 )}
             </form>
+                <h2>ou</h2>
+            <Link to="/login"><h2>Faça login</h2></Link>
         </div>
     )
 }

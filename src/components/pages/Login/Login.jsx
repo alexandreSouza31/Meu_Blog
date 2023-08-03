@@ -4,6 +4,7 @@ import { useAuthentication } from "../../../hooks/useAuthentication";
 
 import "./Login.css";
 import CustomInput from "../../elements/CustomInput";
+import { Link } from "react-router-dom";
 const Login = () => {
 
     const [email, setEmail] = useState("");
@@ -56,6 +57,8 @@ const Login = () => {
                     <input type="submit" value="Aguarde..." />
                 )}
             </form>
+            <h2>ou</h2>
+            <Link to="/register"><h2>Cadastre-se!</h2></Link>
         </div>
     )
 }
