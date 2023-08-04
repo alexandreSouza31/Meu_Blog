@@ -4,4 +4,6 @@
     justify-content: center;
     width: 100%;
     min-height: 60vh;
+    gap: 1rem;
+    text-align: center;
 }
