@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./Register.css";
+import CustomInput from "../../elements/CustomInput";
 import { useAuthentication } from "../../../hooks/useAuthentication";
 
 const Register = () => {
@@ -48,7 +49,8 @@ const Register = () => {
 
             <form onSubmit={handleSubmit}>
                 {error && <p className="error">{error}</p>}
-                <input
+                
+                <CustomInput
                     type="text"
                     name="displayName"
                     required
@@ -56,8 +58,9 @@ const Register = () => {
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                 />
-
-                <input
+            
+               
+                <CustomInput
                     type="email"
                     name="email"
                     required
@@ -66,7 +69,7 @@ const Register = () => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <input
+                <CustomInput
                     type="password"
                     name="password"
                     required
@@ -75,7 +78,7 @@ const Register = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <input
+                <CustomInput
                     type="password"
                     name="confirmPassword"
                     required

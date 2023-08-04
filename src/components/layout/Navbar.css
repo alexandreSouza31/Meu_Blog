@@ -47,7 +47,7 @@ nav ul {
 }
 
 ul li {
-    margin-left: .5rem;
+    padding: .1rem;
 }
 
 .logout_btn {
