@@ -6,21 +6,22 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const currentUser = useAuthValue(); // Use more explicit variable name
+    const userIsLogged = useAuthValue(); //vem pelo contexto de autenticação
+    const { logout } = useAuthentication();//função logout está no hook useauthentication. Só importo aqui.
 
     // Function to render navigation items based on the user's authentication status
     const renderNavigationItems = () => {
-        if (currentUser) {
+        if (userIsLogged) {
             return (
                 <>
                     <li>
                         <NavLink to="/home" end>Home</NavLink>
                     </li>
-                    |
+                    <span className="pipe_link"> |</span>
                     <li>
                         <NavLink to="/dashboard" end>Dashboard</NavLink>
                     </li>
-                    |
+                    <span className="pipe_link"> |</span>
                     <li>
                         <NavLink to="/posts/create" end>Post</NavLink>
                     </li>
@@ -32,15 +33,15 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/" end>Home</NavLink>
                     </li>
-                    <span> |</span>
+                    <span className="pipe_link"> |</span>
                     <li>
                         <NavLink to="/login" end>Entrar</NavLink>
                     </li>
-                    |
+                    <span className="pipe_link"> |</span>
                     <li>
                         <NavLink to="/register" end>Cadastrar</NavLink>
                     </li>
-                    |
+                    <span className="pipe_link"> |</span>
                 </>
             );
         }
@@ -50,25 +51,27 @@ const Navbar = () => {
         <nav>
             <NavLink to="/" end className={({ isActive }) => (isActive ? ".active" : "")}>
                 <img src="/MeuBlog.png" alt="logo Meu Blog" />
-                {currentUser && (
+                {userIsLogged && (
                     <p className="nav_user_small">
-                        Olá, {currentUser.displayName}!
+                        Olá, {userIsLogged.displayName}!
                     </p>
                 )}
             </NavLink>
 
-            {currentUser && (
+            {userIsLogged && (
                 <p className="nav_user">
-                    Olá, {currentUser.displayName}!
+                    Olá, {userIsLogged.displayName}!
                 </p>
             )}
 
             <ul>
                 {renderNavigationItems()}
+                <span className="pipe_link"> |</span>
                 <li>
                     <NavLink to="/about">Sobre</NavLink>
                 </li>
-                {currentUser && (
+                <span className="pipe_link"> |</span>
+                {userIsLogged && (
                     <li>
                         <button className="logout_btn" onClick={logout}>Sair</button>
                     </li>
