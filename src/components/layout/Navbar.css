@@ -50,11 +50,20 @@ ul li {
     padding: .1rem;
 }
 
+.pipe_link{
+    opacity: .5;
+}
+
 .logout_btn {
     padding: 0;
     border: none;
     margin: 0;
     width: 0%;
+}
+
+.logout_btn:hover{
+    font-weight: bold;
+    color: #a4a9ff;
 }
 
 .active {
@@ -144,11 +153,14 @@ ul li {
     nav ul {
         display: flex;
     }
-    .nav_user{
-        
-    }
-    
 }
+
+@media screen and (max-width:720px) {
+    .pipe_link{
+        display: none;
+    }
+}
+
 @media screen and (min-width:1080px) {
     nav ul {
         display: flex;
