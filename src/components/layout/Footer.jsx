@@ -5,6 +5,9 @@ import { SiGmail } from "react-icons/si"
 import "./Footer.css"
 
 const Footer = () => {
+
+    let year = new Date().getFullYear();
+
     return (
         <footer>
             <div className="container">
@@ -67,8 +70,8 @@ const Footer = () => {
                     <p>
                         <span>Meu Blog </span>
                         |
-                        <span className="copy">&copy;</span>
-                        2023
+                        <span className="copy">&copy;</span> 
+                        <span> {year} </span>
                     </p>
                 </section>
             </div>

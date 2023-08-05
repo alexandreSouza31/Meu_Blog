@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useAuthentication } from "../../../hooks/useAuthentication";
 
 import "./Login.css";
-
+import CustomInput from "../../elements/CustomInput";
 const Login = () => {
 
     const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ const Login = () => {
             <h1>Faça Login e aproveite!</h1>
             <form onSubmit={handleSubmit}>
                 {error && <p className="error">{error}</p>}
-                <input
+                <CustomInput
                     type="email"
                     name="email"
                     required
@@ -44,7 +44,7 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <input
+                <CustomInput
                     type="password"
                     name="password"
                     required

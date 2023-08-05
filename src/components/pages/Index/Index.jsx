@@ -7,12 +7,10 @@ const Index = () => {
             <h1>Bem-vindo(a) ao Meu Blog!</h1>
             <h1>Crie, compartilhe, interaja!</h1>
             <div className="links">
-                <Link to="/login"><h2>Faça login,</h2></Link>
-                ou
+                <Link to="/login"><h2>Faça login</h2></Link>
+                <h2>ou</h2>
                 <Link to="/register"><h2>Cadastre-se!</h2></Link>
-
             </div>
-
         </div>
     )
 }
