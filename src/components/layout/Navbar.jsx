@@ -1,4 +1,3 @@
-// Navbar.js
 import { NavLink } from "react-router-dom";
 import { useAuthValue } from "../context/AuthContext";
 import { useAuthentication } from "../../hooks/useAuthentication";
@@ -25,6 +24,12 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/posts/create" end>Post</NavLink>
                     </li>
+                    <span className="pipe_link"> |</span>
+                    <li>
+                        <NavLink to="/about">Sobre</NavLink>
+                    </li>
+                    <span className="pipe_link"> |</span>
+
                 </>
             );
         } else {
@@ -42,6 +47,9 @@ const Navbar = () => {
                         <NavLink to="/register" end>Cadastrar</NavLink>
                     </li>
                     <span className="pipe_link"> |</span>
+                    <li>
+                        <NavLink to="/about">Sobre</NavLink>
+                    </li>
                 </>
             );
         }
@@ -66,11 +74,6 @@ const Navbar = () => {
 
             <ul>
                 {renderNavigationItems()}
-                <span className="pipe_link"> |</span>
-                <li>
-                    <NavLink to="/about">Sobre</NavLink>
-                </li>
-                <span className="pipe_link"> |</span>
                 {userIsLogged && (
                     <li>
                         <button className="logout_btn" onClick={logout}>Sair</button>
