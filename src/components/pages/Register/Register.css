@@ -38,6 +38,7 @@ button{
     border-radius: .5rem;
     color: rgb(22, 21, 21);
     box-shadow: 0 0.3rem #dfd9d9 !important;
+    width: 80vw;
 }
 .input-wrapper input:focus {
     outline-color: rgb(4, 0, 0);
