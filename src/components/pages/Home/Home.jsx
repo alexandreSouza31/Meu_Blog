@@ -4,7 +4,8 @@ import { useFetchDocument } from "../../../hooks/useFetchDocument";
 import { FaSearch, FaSmileBeam, FaUser } from "react-icons/fa"
 
 import "./Home.css";
-import "./DetailPost.css";
+// import "./DetailPost.css";
+import { PostDetail } from "../PostDetail/PostDetail";
 
 const Home = () => {
 
@@ -25,7 +26,6 @@ const Home = () => {
                         placeholder="busque posts por tags"
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    {/* <input type="button" value="Pesquisar" /> */}
                     <button><FaSearch /></button>
                 </div>
                 <h2>Veja os posts mais recentes</h2>
@@ -34,21 +34,7 @@ const Home = () => {
 
             <div className="posts_container">
                 {loading && <p>Carregando</p>}
-                {posts && posts.map((post) => (
-                    <div key={post.id} className="card_post">
-                        <p className="container_user">
-                            <span >< FaUser /></span>
-                            <span className="user">{post.createdBy}</span>
-                        </p>
-                        <div className="post_details">
-                            <h3>{post.title}</h3>
-                            <h4>{post.body}</h4>
-                            <p>{post.tagsArray}</p>
-                            <img src={post.image} alt="" />
-                        </div>
-
-                    </div>
-                ))}
+                {posts && posts.map((post)=><PostDetail post={post} key={post.id}/>)}
 
                 <p className="end_posts">É só isso por enquanto.<FaSmileBeam /></p>
                 {posts && posts.length === 0 && (
