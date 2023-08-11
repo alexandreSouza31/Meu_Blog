@@ -50,12 +50,15 @@ Mobile first, clean code, refactoring, ReactJS.
 ### How to run the code? 
 
 
-you can download it to your machine, open the code editor terminal, go into the root folder of the project and type npm run dev. Wait for the terminal to complete and as soon as an address like 'localhost:5500/' or equivalent is shown, copy and paste that address into your browser.
+1 - Cloning/downloading the project
 
-or, if you want to see it working, access the deploy below:
+Enter the command```git clone https://https://github.com/alexandreSouza31/Meu_Blog``` in the terminal, or if you prefer, download it by clicking on the green button called "Code" in this project's repository, and then, "Download zip.
 
-- [Vercel](https://meu-blog-phi.vercel.app/)
+2 - Open the code editor terminal, go into the root folder of the project and type npm run dev. Wait for the terminal to complete and as soon as an address like 'localhost:5500/' or equivalent is shown, copy and paste that address into your browser.
 
+#### Deploy
+
+- [Vercel](https://meu-blog-phi.vercel.app/) - Website used to host the application
  :)
 
 ## Author
