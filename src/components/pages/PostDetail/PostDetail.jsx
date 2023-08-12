@@ -1,5 +1,5 @@
 import { FaUser } from "react-icons/fa";
-import "./DetailPost.css";
+import "./PostDetail.css";
 
 export const PostDetail = ({ post }) => {
     return (
