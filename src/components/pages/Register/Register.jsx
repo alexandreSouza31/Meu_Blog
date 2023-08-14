@@ -5,6 +5,7 @@ import CustomInput from "../../elements/CustomInput";
 import { useAuthentication } from "../../../hooks/useAuthentication";
 
 import "./Register.css";
+import "../../elements/CustomInput.css";
 
 const Register = () => {
     const [displayName, setDisplayName] = useState("");
