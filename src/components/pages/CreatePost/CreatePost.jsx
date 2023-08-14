@@ -4,6 +4,7 @@ import { useAuthValue } from "../../context/AuthContext";
 
 import "./CreatePost.css"
 import { useNavigate } from "react-router-dom";
+import CustomInput from "../../elements/CustomInput";
 
 export const CreatePost = () => {
 
@@ -73,7 +74,7 @@ export const CreatePost = () => {
                 {response.error && <p className="error">{response.error}</p>}
                 {formError && <p className="error">{formError}</p>}
 
-                <input
+                <CustomInput
                     type="text"
                     name="title"
                     placeholder="Escreva o título do post."
@@ -81,7 +82,7 @@ export const CreatePost = () => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
 
-                <input
+                <CustomInput
                     type="text"
                     name="image"
                     placeholder="Insira a URL da imagem pro post."
@@ -96,7 +97,7 @@ export const CreatePost = () => {
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
                 />
-                <input
+                <CustomInput
                     type="text"
                     name="tags"
                     placeholder="Adicione tags separando por vírgula. Ex: JS, React.js,..."

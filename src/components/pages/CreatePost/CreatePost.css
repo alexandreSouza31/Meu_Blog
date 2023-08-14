@@ -9,6 +9,23 @@
     gap: 1rem;
 }
 
+form input{
+    padding: 1rem;
+}
+
 .container_post textarea {
-    margin-bottom: 0rem;
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    color: rgb(22, 21, 21);
+    box-shadow: 0 0.3rem #dfd9d9 !important;
+    width: 80vw;
+}
+.container_post textarea:focus {
+    outline-color: rgb(4, 0, 0);
+}
+.container_post textarea:focus::placeholder {
+    color: transparent;
 }
